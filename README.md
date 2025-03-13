@@ -1,6 +1,5 @@
-# AAE6102_Assignment1
 
-﻿GNSS Software-Defined Receiver (SDR) Signals Processing Study - Technical Report
+# ﻿GNSS Software-Defined Receiver (SDR) Signals Processing Study - Technical Report
 
 Author: Lo Long Yin 
 
