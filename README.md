@@ -55,7 +55,7 @@ The early-prompt-late correlator spacing in the software is 0.5 chips, which is 
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.001.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.002.png)
 
-<font size="9">Instantaneous correlation function diagrams</font>
+<font size="4">Instantaneous correlation function diagrams</font>
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.003.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.004.png)
 
