@@ -55,11 +55,11 @@ The early-prompt-late correlator spacing in the software is 0.5 chips, which is 
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.001.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.002.png)
 
-<p style="font-size: 16px;">Instantaneous correlation function diagrams</p>
+**Instantaneous correlation function diagrams**
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.003.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.004.png)
 
-Continuous correlation function diagrams
+**Continuous correlation function diagrams**
 
 In theory, multipath issues cause overlapping signals and distortion in the correlation pattern. The distorted pattern further interferes with the DLL algorithm, preventing the prompt correlator from aligning with the signal in the "Early=Late" condition. However, the study dataset did not illustrate this factor. The instantaneous correlation function diagrams show a distorted pattern in the open-sky dataset. In contrast, the urban dataset correlation plot is an ideal triangle with a 5-10 times higher average correlation. Although this report captures only a small fraction of samples, this observation is a common phenomenon in the dataset. This phenomenon may be related to differences in the front-end.
 
@@ -99,7 +99,7 @@ The Hong Kong Government Land Department provides historical GNSS data collected
 
 ![C:\Users\Louis Lo\Downloads\Frame 8.png](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.005.png)
 
-Geographical relationship between the dataset ground truth coordinates and reference station network. (Source: The HK Land Department)
+**Geographical relationship between the dataset ground truth coordinates and reference station network. (Source: The HK Land Department)**
 
 According to the dataset information, the ground truth coordinates of the open-sky and urban datasets are in Tai Hang Tung and Kowloon Bay, Hong Kong, respectively. The map of the Hong Kong satellite positioning reference station network shows that the nearest reference stations to Tai Hang Tung and Kowloon Bay are the Stonecutters Island reference station (HKSC) and the Quarry Bay integrity monitoring station (HKQT), respectively. Therefore, the correction factors from these two reference stations at the corresponding times are applied in the PVT estimation.
 
@@ -116,27 +116,27 @@ According to the dataset information, the ground truth coordinates of the open-s
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.006.jpeg)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.007.jpeg)
 
-Stonecutters Island reference station and Quarry Bay integrity monitoring station. (Source: The HK Land Department)
+**Stonecutters Island reference station and Quarry Bay integrity monitoring station. (Source: The HK Land Department)**
 
 The following diagrams takes the satellite PRN No. 3 as the example, ploted the pseudorange estimation after correction.
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.008.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.009.png)
 
-Pseudorange estimation
+**Pseudorange estimation**
 
 Weighted Least Squares (WLS) is the conventional algorithm used to compute the PVT from pseudorange estimations of several satellites (not fewer than four). The concept of WLS is to linearize the nonlinear pseudorange equation and solve it through iteration, which is advanced in terms of software computing. A weighting matrix is used in the iteration to account for the reliability of each satellite, which can be determined by the SNR. The iteration runs until the error is smaller than the preset threshold. GPSSDR-vt implements WLS to compute the PVT, as shown in the figure below.
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.010.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.011.png)
 
-Horizontal position estimation errors
+**Horizontal position estimation errors**
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.012.png)
 
-Urban dataset position estimation errors in time domain
+**Urban dataset position estimation errors in time domain**
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.013.png)
 
-Urban dataset, horizontal position estimation errors only for data after the 300th data point
+**Urban dataset, horizontal position estimation errors only for data after the 300th data point**
 
 The horizontal position estimation errors show that the open-sky dataset has a precision level of around 15 meters and a bias of 25 meters. The bias might arise from satellite or receiver clock offsets or from ionospheric and tropospheric delays that are not fully eliminated by the correction factors.
 
@@ -146,7 +146,7 @@ In theory, the urban dataset contains multipath and non-line-of-sight (NLOS) eff
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.014.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.015.png)
 
-Velocity estimation results
+**Velocity estimation results**
 
 **The raw data in this section is located at “Soucre/4Estimation”.**
 
@@ -157,11 +157,11 @@ The Kalman filter is only suitable for linear systems. For nonlinear systems lik
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.016.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.017.png)
 
-Horizontal position estimation errors using vector tracking EKF
+**Horizontal position estimation errors using vector tracking EKF**
 
 ![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.018.png)![](Aspose.Words.c135fe7f-c059-4e29-aa17-bbf45de739d5.019.png)
 
-Velocity estimation results using vector tracking EKF
+**Velocity estimation results using vector tracking EKF**
 
 An obvious consequence of using vector tracking EKF is the significant reduction in bias. The bias of the open-sky dataset is reduced to around six meters. However, the precision of the open-sky dataset seems to decrease to around 40 meters, whereas the precision of the urban dataset remains at around 40 meters. On the other hand, the velocity estimation using vector tracking EKF provides a much more precise estimation compared to the conventional WLS approach. 
 
